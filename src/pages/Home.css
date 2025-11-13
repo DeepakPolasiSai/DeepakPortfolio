@@ -56,8 +56,10 @@
 
 .hero-image {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 .hero-avatar {
@@ -72,9 +74,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 8rem;
   box-shadow: var(--shadow-xl);
   animation: float 3s ease-in-out infinite;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 @keyframes float {
@@ -84,6 +95,58 @@
   50% {
     transform: translateY(-20px);
   }
+}
+
+.resume-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.resume-button.download {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.resume-button.download:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+.resume-button.view {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.resume-button.view:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.resume-icon {
+  font-size: 1.25rem;
+  display: inline-block;
 }
 
 .skills-grid {
@@ -138,6 +201,84 @@
   margin-bottom: 1.5rem;
 }
 
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.featured-project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.featured-project-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.featured-project-card:hover .featured-project-image {
+  transform: scale(1.05);
+}
+
+.featured-project-emoji {
+  font-size: 5rem;
+  z-index: 1;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.featured-project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.featured-project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.featured-project-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.featured-project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag-small {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.featured-project-link {
+  margin-top: 0.5rem;
+}
+
+.featured-project-link a {
+  text-decoration: none;
+}
+
 @media (max-width: 968px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -156,6 +297,16 @@
     width: 200px;
     height: 200px;
     font-size: 5rem;
+  }
+
+  .resume-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .resume-button {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -178,6 +329,10 @@
 
   .hero-buttons button {
     width: 100%;
+  }
+
+  .featured-projects-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -5,25 +5,45 @@ import './About.css'
 const About = () => {
   const experiences = [
     {
-      title: 'Senior Developer',
-      company: 'Tech Company',
-      period: '2022 - Present',
-      description: 'Leading development of innovative web applications.',
+      title: 'Software Development Engineer',
+      company: 'Coupa Software',
+      period: 'Jan 2025 – Present',
+      achievements: [
+        'Engineered Scalable Microservices: Designed and delivered core financial API services (Java/Spring Boot) handling over 1M+ monthly requests while maintaining an impressive 99.98% uptime.',
+        'Drove Performance Optimization: Implemented system-level optimizations that significantly improved service performance, resulting in a 30% reduction in P95 latency.',
+        'Accelerated Product Velocity: Designed and delivered a reusable, schema-driven dynamic form system (React + TypeScript). This foundational component scaled product development by reducing UI configuration time by 70% for multiple product teams.',
+        'Ensured System Resilience: Established a centralized retry and error-handling framework for complex cross-cloud services, lowering integration failure rates by 45%.',
+        'Automated Infrastructure (IaC): Automated infrastructure provisioning using AWS CDK and GitHub Actions, enabling single-click deployments and accelerating time-to-market for 5 critical product releases.',
+      ],
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Startup Inc',
-      period: '2020 - 2022',
-      description: 'Built scalable applications using modern technologies.',
+      title: 'Software Development Engineer',
+      company: 'Citius Tech',
+      period: 'Dec 2019 – Dec 2023',
+      achievements: [
+        'Optimized Critical Pipelines: Optimized complex database queries (MySQL/PostgreSQL) and integrated Redis-backed caching. This reduced analytics/reporting latency by 35% and supported over 200K+ API calls/day in a critical analytics pipeline.',
+        'Improved Product Quality: Developed a robust, role-based, server-driven field visibility control system. This eliminated Frontend/Backend validation drift and successfully reduced product defects by 40%.',
+        'Enhanced User Experience: Partnered with Product Managers to prioritize and deliver latency and SLA improvements for high-value financial workflows, resulting in a 25% reduction in customer-reported delays.',
+        'Pioneered Data Infrastructure: Established an ETL data infrastructure capable of processing 30M+ rows of healthcare data, enabling Product Managers to make decisions with 2x faster report freshness.',
+        'Automated DevOps: Containerized services using Docker and automated CI/CD with GitHub Actions, which reduced deployment time/failure rates by 50% across teams.',
+      ],
     },
   ]
 
   const education = [
     {
-      degree: 'Bachelor of Science',
-      field: 'Computer Science',
-      university: 'University Name',
-      year: '2020',
+      degree: 'MS in Computer Science',
+      university: 'Florida International University',
+      location: 'Miami, FL',
+      period: 'Jan 2024 - May 2025',
+      gpa: '3.95/4.0',
+      coursework: [
+        'Data Structures and Algorithms',
+        'Object Oriented Design',
+        'Design Patterns',
+        'AI/ML (LLM, Agentic AI, RAG)',
+        'Operating Systems',
+      ],
     },
   ]
 
@@ -33,16 +53,34 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-description">
-              I'm a passionate full-stack developer with a love for creating
-              beautiful and functional web applications. With years of experience
-              in modern web technologies, I bring ideas to life through clean code
-              and innovative solutions.
+              My work is centered on achieving measurable engineering leverage and operational excellence across the stack (Java/Spring Boot, React/TypeScript):
             </p>
-            <p className="about-description">
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with
-              the developer community.
-            </p>
+            <div className="about-highlights">
+              <div className="highlight-item">
+                <h4 className="highlight-title">Driving Product Velocity</h4>
+                <p className="highlight-description">
+                  I own and deliver reusable platform components (like schema-driven UI frameworks) that dramatically accelerate feature time-to-market, reducing UI configuration time by 70% for multiple product teams.
+                </p>
+              </div>
+              <div className="highlight-item">
+                <h4 className="highlight-title">Engineering Scale & Resilience</h4>
+                <p className="highlight-description">
+                  I engineer high-throughput microservices that handle over 1M+ monthly requests with 99.98% uptime. I have driven critical performance optimizations, resulting in a 30% reduction in P95 latency.
+                </p>
+              </div>
+              <div className="highlight-item">
+                <h4 className="highlight-title">System Stability</h4>
+                <p className="highlight-description">
+                  I establish robust quality and resilience patterns, such as centralized retry frameworks, that cut cross-cloud integration failure rates by 45% and established E2E testing that reduced critical production bugs by 90%.
+                </p>
+              </div>
+              <div className="highlight-item">
+                <h4 className="highlight-title">Infrastructure Automation (IaC)</h4>
+                <p className="highlight-description">
+                  I automate infrastructure provisioning via AWS CDK and GitHub Actions, enabling single-click deployments and accelerating time-to-market for 5 critical product releases.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
@@ -54,7 +92,13 @@ const About = () => {
               <h3 className="experience-title">{exp.title}</h3>
               <p className="experience-company">{exp.company}</p>
               <p className="experience-period">{exp.period}</p>
-              <p className="experience-description">{exp.description}</p>
+              <ul className="experience-achievements">
+                {exp.achievements.map((achievement, idx) => (
+                  <li key={idx} className="experience-achievement">
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
             </Card>
           ))}
         </div>
@@ -63,11 +107,29 @@ const About = () => {
       <Section title="Education">
         <div className="education-grid">
           {education.map((edu, index) => (
-            <Card key={index} className="education-card">
-              <h3 className="education-degree">{edu.degree}</h3>
-              <p className="education-field">{edu.field}</p>
-              <p className="education-university">{edu.university}</p>
-              <p className="education-year">{edu.year}</p>
+            <Card key={index} hover className="education-card">
+              <div className="education-header">
+                <div className="education-icon">🎓</div>
+                <div className="education-main-info">
+                  <h3 className="education-degree">{edu.degree}</h3>
+                  <p className="education-university">{edu.university}</p>
+                  <p className="education-location-period">{edu.location} | {edu.period}</p>
+                </div>
+              </div>
+              <div className="education-gpa-badge">
+                <span className="gpa-label">GPA</span>
+                <span className="gpa-value">{edu.gpa}</span>
+              </div>
+              <div className="education-coursework">
+                <h4 className="coursework-title">Relevant Coursework</h4>
+                <ul className="coursework-list">
+                  {edu.coursework.map((course, idx) => (
+                    <li key={idx} className="coursework-item">
+                      {course}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Card>
           ))}
         </div>

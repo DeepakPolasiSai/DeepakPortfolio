@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: '🔗' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: '🔗' },
-    { name: 'Twitter', url: 'https://twitter.com', icon: '🔗' },
+    { name: 'GitHub', url: 'https://github.com/DeepakPolasiSai', icon: '🔗' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/deepaksaipolasi/', icon: '🔗' },
+    { name: 'Instagram', url: 'https://www.instagram.com/its_deeeee_/', icon: '🔗' },
   ]
 
   return (
@@ -14,9 +14,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">Portfolio</h3>
+            <h3 className="footer-title">DeepakPolasiSai</h3>
             <p className="footer-description">
-              Building beautiful and functional web experiences.
+              Product-Focused Full-Stack Engineer building resilient, high-scale systems.
             </p>
           </div>
           
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Portfolio. All rights reserved.</p>
+          <p>&copy; {currentYear} DeepakPolasiSai. All rights reserved.</p>
         </div>
       </div>
     </footer>

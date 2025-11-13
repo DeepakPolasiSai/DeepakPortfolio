@@ -3,6 +3,13 @@
   color: #ffffff;
   padding: 3rem 0 1.5rem;
   margin-top: 4rem;
+  border-top: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer {
+  background-color: var(--bg-primary);
+  border-top-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .footer-container {
@@ -80,10 +87,15 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #374151;
+  border-top: 1px solid var(--border-color);
   padding-top: 1.5rem;
   text-align: center;
   color: #6b7280;
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-top-color: var(--border-color);
+  color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
