@@ -1,0 +1,61 @@
+import './Footer.css'
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
+  const socialLinks = [
+    { name: 'GitHub', url: 'https://github.com', icon: '🔗' },
+    { name: 'LinkedIn', url: 'https://linkedin.com', icon: '🔗' },
+    { name: 'Twitter', url: 'https://twitter.com', icon: '🔗' },
+  ]
+
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3 className="footer-title">Portfolio</h3>
+            <p className="footer-description">
+              Building beautiful and functional web experiences.
+            </p>
+          </div>
+          
+          <div className="footer-section">
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-section">
+            <h4 className="footer-heading">Connect</h4>
+            <div className="social-links">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                  aria-label={social.name}
+                >
+                  {social.icon} {social.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        <div className="footer-bottom">
+          <p>&copy; {currentYear} Portfolio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
+
