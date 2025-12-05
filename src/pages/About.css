@@ -58,7 +58,12 @@
   margin: 0;
 }
 
-.experience-grid,
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -107,6 +112,13 @@
   font-size: 1.125rem;
   font-weight: 500;
   color: var(--primary-color);
+}
+
+.experience-location {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 0.25rem;
 }
 
 .experience-period {
@@ -356,8 +368,17 @@
   text-decoration: none;
 }
 
+@media (max-width: 1200px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .experience-grid,
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
   .education-grid,
   .featured-projects-grid {
     grid-template-columns: 1fr;

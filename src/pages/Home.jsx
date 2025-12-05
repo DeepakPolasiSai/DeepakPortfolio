@@ -15,7 +15,7 @@ const Home = () => {
             </h1>
             <h2 className="hero-subtitle">Product-Focused Full-Stack Engineer</h2>
             <p className="hero-description">
-              I'm a Product-Focused Full-Stack Engineer with 3+ years of experience building resilient, high-scale systems (Java/Spring Boot, React/TypeScript). I specialize in engineering leverage—delivering reusable platform components that accelerate feature velocity for entire product teams. My focus is on driving measurable business outcomes, from maintaining 99.98% uptime on core financial APIs to reducing cross-cloud integration failures by 45%.
+              I'm a Product-Focused Full-Stack Engineer with 4+ years of experience building resilient, high-scale systems (Python, Java/Spring Boot, React/TypeScript, Swift/iOS). I specialize in engineering leverage—architecting microservices processing 2.5M+ daily transactions and delivering reusable platform components that accelerate feature velocity for entire product teams. My focus is on driving measurable business outcomes, from maintaining 99.99% API uptime to reducing critical production defects by 45% and accelerating feature delivery by 40%.
             </p>
             <div className="hero-buttons">
               <Link to="/projects">
@@ -38,7 +38,7 @@ const Home = () => {
             </div>
             <div className="resume-buttons">
               <a
-                href="/deepak_SDE_project.pdf"
+                href="/deepak_SDE_project.pdf.pdf"
                 download="deepak_SDE_project.pdf"
                 className="resume-button download"
               >
@@ -46,7 +46,7 @@ const Home = () => {
                 <span>Download Resume</span>
               </a>
               <a
-                href="/deepak_SDE_project.pdf"
+                href="/deepak_SDE_project.pdf.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-button view"
@@ -64,7 +64,8 @@ const Home = () => {
           {[
             'React', 'TypeScript', 'JavaScript', 'Next.js', 
             'Node.js', 'Express', 'Java', 'Spring Boot',
-            'MongoDB', 'PostgreSQL', 'Socket.io',
+            'Python', 'Swift', 'iOS', 'C++',
+            'MongoDB', 'PostgreSQL', 'GraphQL', 'Socket.io',
             'Stripe', 'JWT', 'Clerk', 'Docker',
             'Tailwind CSS', 'Material UI', 'CSS', 'HTML',
             'Vite', 'OpenAI API', 'AI/ML', 'Airtable',
